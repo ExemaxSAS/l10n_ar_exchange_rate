@@ -1,15 +1,13 @@
 # -*- coding: utf-8 -*-
 
 from odoo import models, fields, api
+from datetime import datetime
+from odoo.tools import format_date
 
-# class odoo_package_addon(models.Model):
-#     _name = 'odoo_package_addon.odoo_package_addon'
+class ResCurrency(models.Model):
+    _inherit = 'res.currency'
 
-#     name = fields.Char()
-#     value = fields.Integer()
-#     value2 = fields.Float(compute="_value_pc", store=True)
-#     description = fields.Text()
-#
-#     @api.depends('value')
-#     def _value_pc(self):
-#         self.value2 = float(self.value) / 100
+    def l10n_ar_action_get_afip_ws_currency_rate(self):
+        date, rate = self._l10n_ar_get_afip_ws_currency_rate()
+        date = datetime.strptime(date, '%Y%m%d').date()
+        self.update({'rate_ids': [(0, 0, {'name': date, 'inverse_company_rate': rate})]})
