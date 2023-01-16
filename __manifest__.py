@@ -19,10 +19,11 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'l10n_ar_edi'],
+    'depends': ['base', 'l10n_ar_afipws_fe'],
 
     # always loaded
     'data': [
+        'data/cron_jobs.xml'
         # 'security/ir.model.access.csv',
         #'views/views.xml',
         #'views/templates.xml',
