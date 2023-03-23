@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+# 15.0 EE
 
 from odoo import models, fields, api
 from datetime import datetime
