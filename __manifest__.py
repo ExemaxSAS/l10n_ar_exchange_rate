@@ -19,7 +19,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'l10n_ar_edi'],
+    'depends': ['base', 'l10n_ar', 'l10n_ar_afipws'],
 
     # always loaded
     'data': [
